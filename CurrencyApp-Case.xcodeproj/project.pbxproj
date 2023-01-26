@@ -15,6 +15,7 @@
 		5CAFD1A029830F94006F867F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CAFD19E29830F94006F867F /* LaunchScreen.storyboard */; };
 		5CAFD1A929830FD5006F867F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFD1A829830FD5006F867F /* Constant.swift */; };
 		5CAFD1AC29830FF6006F867F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFD1AB29830FF6006F867F /* Model.swift */; };
+		5CAFD1AF29831B66006F867F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFD1AE29831B66006F867F /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5CAFD1A129830F94006F867F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CAFD1A829830FD5006F867F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5CAFD1AB29830FF6006F867F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5CAFD1AE29831B66006F867F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		5CAFD19229830F93006F867F /* CurrencyApp-Case */ = {
 			isa = PBXGroup;
 			children = (
+				5CAFD1AD29831B58006F867F /* Network */,
 				5CAFD1AA29830FE7006F867F /* Model */,
 				5CAFD1A729830FC6006F867F /* Constant */,
 				5CAFD19329830F93006F867F /* AppDelegate.swift */,
@@ -87,6 +90,14 @@
 				5CAFD1AB29830FF6006F867F /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5CAFD1AD29831B58006F867F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5CAFD1AE29831B66006F867F /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 			files = (
 				5CAFD1AC29830FF6006F867F /* Model.swift in Sources */,
 				5CAFD19829830F93006F867F /* ViewController.swift in Sources */,
+				5CAFD1AF29831B66006F867F /* Network.swift in Sources */,
 				5CAFD19429830F93006F867F /* AppDelegate.swift in Sources */,
 				5CAFD19629830F93006F867F /* SceneDelegate.swift in Sources */,
 				5CAFD1A929830FD5006F867F /* Constant.swift in Sources */,
