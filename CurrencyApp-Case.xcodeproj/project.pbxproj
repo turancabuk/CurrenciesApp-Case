@@ -16,6 +16,11 @@
 		5CAFD1A929830FD5006F867F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFD1A829830FD5006F867F /* Constant.swift */; };
 		5CAFD1AC29830FF6006F867F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFD1AB29830FF6006F867F /* Model.swift */; };
 		5CAFD1AF29831B66006F867F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFD1AE29831B66006F867F /* Network.swift */; };
+		5CAFD1B229831D48006F867F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFD1B129831D48006F867F /* ViewModel.swift */; };
+		5CAFD1B529832209006F867F /* CryptoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFD1B429832209006F867F /* CryptoDetailCell.swift */; };
+		5CAFD1B8298337FE006F867F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5CAFD1B7298337FE006F867F /* Kingfisher */; };
+		5CAFD1BB29841973006F867F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5CAFD1BA29841973006F867F /* SDWebImage */; };
+		5CAFD1BE29841A1E006F867F /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 5CAFD1BD29841A1E006F867F /* SDWebImageSVGCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,8 @@
 		5CAFD1A829830FD5006F867F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5CAFD1AB29830FF6006F867F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5CAFD1AE29831B66006F867F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		5CAFD1B129831D48006F867F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5CAFD1B429832209006F867F /* CryptoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CAFD1BE29841A1E006F867F /* SDWebImageSVGCoder in Frameworks */,
+				5CAFD1BB29841973006F867F /* SDWebImage in Frameworks */,
+				5CAFD1B8298337FE006F867F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,8 @@
 		5CAFD19229830F93006F867F /* CurrencyApp-Case */ = {
 			isa = PBXGroup;
 			children = (
+				5CAFD1B3298321E1006F867F /* Cell */,
+				5CAFD1B029831D35006F867F /* ViewModel */,
 				5CAFD1AD29831B58006F867F /* Network */,
 				5CAFD1AA29830FE7006F867F /* Model */,
 				5CAFD1A729830FC6006F867F /* Constant */,
@@ -100,6 +112,22 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		5CAFD1B029831D35006F867F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5CAFD1B129831D48006F867F /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5CAFD1B3298321E1006F867F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5CAFD1B429832209006F867F /* CryptoDetailCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +144,11 @@
 			dependencies = (
 			);
 			name = "CurrencyApp-Case";
+			packageProductDependencies = (
+				5CAFD1B7298337FE006F867F /* Kingfisher */,
+				5CAFD1BA29841973006F867F /* SDWebImage */,
+				5CAFD1BD29841A1E006F867F /* SDWebImageSVGCoder */,
+			);
 			productName = "CurrencyApp-Case";
 			productReference = 5CAFD19029830F93006F867F /* CurrencyApp-Case.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +177,11 @@
 				Base,
 			);
 			mainGroup = 5CAFD18729830F93006F867F;
+			packageReferences = (
+				5CAFD1B6298337FE006F867F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5CAFD1B929841973006F867F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				5CAFD1BC29841A1E006F867F /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
+			);
 			productRefGroup = 5CAFD19129830F93006F867F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,7 +214,9 @@
 				5CAFD1AF29831B66006F867F /* Network.swift in Sources */,
 				5CAFD19429830F93006F867F /* AppDelegate.swift in Sources */,
 				5CAFD19629830F93006F867F /* SceneDelegate.swift in Sources */,
+				5CAFD1B529832209006F867F /* CryptoDetailCell.swift in Sources */,
 				5CAFD1A929830FD5006F867F /* Constant.swift in Sources */,
+				5CAFD1B229831D48006F867F /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +434,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CAFD1B6298337FE006F867F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		5CAFD1B929841973006F867F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		5CAFD1BC29841A1E006F867F /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CAFD1B7298337FE006F867F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CAFD1B6298337FE006F867F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		5CAFD1BA29841973006F867F /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CAFD1B929841973006F867F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		5CAFD1BD29841A1E006F867F /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CAFD1BC29841A1E006F867F /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CAFD18829830F93006F867F /* Project object */;
 }
