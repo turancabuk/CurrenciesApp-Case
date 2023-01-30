@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class ViewModel {
+final class CoinViewModel {
     
     let webservice = CurrenciesWebService()
     
