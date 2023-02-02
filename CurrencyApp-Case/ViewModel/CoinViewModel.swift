@@ -6,27 +6,33 @@
 //
 
 import Foundation
-import UIKit
 
-final class CoinViewModel {
+class CoinViewModel {
     
-    let webservice = CurrenciesWebService()
+
+    let webService = CurrenciesWebService()
     
-    var coinsList: [Coin] = []
+    var mainArray: [Coin] = []
+    var searchResultArray: [Coin] = []
+    var coinsArray: [Coin] = []
+    
 
-
-    func getCurrencies (completion: @escaping ([Coin]) -> Void) {
-        webservice.fetch(response: Currencies.self, with: .getCurrencies) { [self] result in
+    
+    
+    func getCurrencies(completion: @escaping ([Coin]) -> Void ) {
+        
+        webService.fetch(response: Currencies.self, with: .getCurrencies) { [self] result in
             switch result {
             case.success(let response):
                 if let coins = response.data?.coins {
-                    self.coinsList = coins
+                    self.mainArray = coins
+                    self.coinsArray = mainArray
                     completion(coins)
                 }
-            case .failure(let error):
+            case.failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-
 }
+

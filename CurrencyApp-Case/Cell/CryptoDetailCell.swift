@@ -29,7 +29,7 @@ class CryptoDetailCell: UITableViewCell {
 
         if let change = Double(article.change!) {
             cryptoChange.text = article.change
-            let changeColor = (change > 0) ? UIColor.blue : UIColor.red
+            let changeColor = (change > 0) ? UIColor.systemGreen : UIColor.red
             cryptoChange.textColor = changeColor
             cryptoVolume.textColor = changeColor
         }

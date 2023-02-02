@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
             
             if let change = Double(article.change ?? "12") {
                 changeLabel.text = article.change
-                let changeColor = (change > 0) ? UIColor.blue : UIColor.red
+                let changeColor = (change > 0) ? UIColor.systemGreen : UIColor.red
                 changeLabel.textColor = changeColor
                 volumeLabel.textColor = changeColor
             }
