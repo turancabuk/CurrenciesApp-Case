@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  CurrencyApp-Case
 //
 //  Created by Turan Çabuk on 26.01.2023.
@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var viewModel : CoinViewModel!
     
@@ -23,10 +23,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rankingList: UINavigationItem!
     @IBOutlet weak var searchBar: UISearchBar!
-
-    var selectedTitle: String?
+    @IBOutlet weak var sortButton: UIButton!
     
-   
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -36,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         menuView.layer.cornerRadius = 20
         menuView.layer.masksToBounds = true
         view.addSubview(menuView)
-//         MARK: HamburgerMenu
+        //         MARK: HamburgerMenu
         menuView.backgroundColor = UIColor(red: 119/255, green: 104/255, blue: 180/255, alpha: 1)
         menuView.isHidden = true
         priceButton.backgroundColor = .clear
@@ -64,61 +66,67 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-       
+        
         viewModel = CoinViewModel()
         viewModel?.getCurrencies {_ in
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
-
-    @objc func sortByPrice() {
-        guard let viewModel = self.viewModel else {return}
-        viewModel.mainArray.sort { (crypto1, crypto2) -> Bool in
-            return crypto1.price! < crypto2.price!
-        }
-        DispatchQueue.main.async { [self] in
-            self.tableView.reloadData()
-            menuView.isHidden = true
-        }
-        self.selectedTitle = "Price"
-    }
-    @objc func sortByMarketCap() {
-        guard let viewModel = self.viewModel else {return}
-        viewModel.mainArray.sort { (crypto1, crypto2) -> Bool in
-            return crypto1.marketCap! < crypto2.marketCap!
-        }
-        DispatchQueue.main.async { [self] in
-            self.tableView.reloadData()
-            menuView.isHidden = true
-        }
-        self.selectedTitle = "Market Cap"
-    }
+    
     @objc func sortByVolume() {
         guard let viewModel = self.viewModel else {return}
-        viewModel.mainArray.sort { (crypto1, crypto2) -> Bool in
-            return crypto1.the24HVolume! < crypto2.the24HVolume!
+        viewModel.coinsArray.sort{ (coinOne, coinTwo) -> Bool in
+            return coinOne.the24HVolume ?? "" < coinTwo.the24HVolume ?? ""
+        }
+        DispatchQueue.main.async { [self] in
+            self.tableView.reloadData()
+            menuView.isHidden = true
+            
+        }
+        sortButton.setTitle("24H Vol", for: .normal)
+    }
+    
+    @objc func sortByPrice() {
+        guard let viewModel = self.viewModel else {return}
+        viewModel.coinsArray.sort{ (coinOne, coinTwo) -> Bool in
+            return coinOne.price! < coinTwo.price!
         }
         DispatchQueue.main.async { [self] in
             self.tableView.reloadData()
             menuView.isHidden = true
         }
-        self.selectedTitle = "24h Volume"
+        sortButton.setTitle("Price", for: .normal)
     }
+    
     @objc func sortByChange() {
         guard let viewModel = self.viewModel else {return}
-        viewModel.mainArray.sort { (crypto1, crypto2) -> Bool in
-            return crypto1.change! < crypto2.change!
+        viewModel.coinsArray.sort{ (coinOne, coinTwo) -> Bool in
+            return coinOne.change! < coinTwo.change!
+        }
+        
+        DispatchQueue.main.async { [self] in
+            self.tableView.reloadData()
+            menuView.isHidden = true
+        }
+        sortButton.setTitle("Change", for: .normal)
+    }
+    
+    @objc func sortByMarketCap() {
+        guard let viewModel = self.viewModel else {return}
+        viewModel.coinsArray.sort{ (coinOne, coinTwo) -> Bool in
+            return coinOne.marketCap! < coinTwo.marketCap!
         }
         DispatchQueue.main.async { [self] in
             self.tableView.reloadData()
             menuView.isHidden = true
         }
-        self.selectedTitle = "Change"
+        sortButton.setTitle("Market Cap", for: .normal)
     }
-    @IBAction func sortButton(_ sender: Any) {
+    
+    @IBAction func sortButtonClicked(_ sender: Any) {
         
         if menuView.isHidden {
             menuView.isHidden = false
@@ -131,18 +139,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-       
-        return (viewModel?.mainArray.count)!
+        
+        return (viewModel?.coinsArray.count)!
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CryptoDetailCell = tableView.dequeueReusableCell(withIdentifier: "CryptoCellIdentifier", for: indexPath) as! CryptoDetailCell
-        let list = viewModel?.mainArray[indexPath.section]
-        cell.configCell(article: list!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CryptoCellIdentifier", for: indexPath) as! CryptoDetailCell
+        if let list = viewModel?.coinsArray[indexPath.section] {
+            cell.configCell(article: list)
+        }
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let chosenProduct = viewModel?.mainArray[indexPath.section] {
+        if let chosenProduct = viewModel?.coinsArray[indexPath.section] {
             let vc = storyboard!.instantiateViewController(withIdentifier: "CryptoDetailViewController") as! DetailViewController
             vc.article = chosenProduct
             self.navigationController?.pushViewController(vc, animated: true)
@@ -150,7 +159,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 }
-extension ViewController: UISearchBarDelegate {
+extension MainViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchResultArray = self.viewModel.mainArray.filter( { (coin) -> Bool in

@@ -1,5 +1,5 @@
 //
-//  SplashController.swift
+//  SplashViewController.swift
 //  CurrencyApp-Case
 //
 //  Created by Turan Çabuk on 30.01.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashController: UIViewController {
+class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
