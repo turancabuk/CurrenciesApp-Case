@@ -20,12 +20,10 @@ final class CurrenciesWebService: CurrenciesWebServiceProtocol {
                 completion(.failure(error))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NetworkError.dataNotFound))
                 return
             }
-            
             let decoder = JSONDecoder()
             do {
                 let response = try decoder.decode(T.self, from: data)

@@ -9,15 +9,11 @@ import Foundation
 
 class CoinViewModel {
     
-
     let webService = CurrenciesWebService()
     
-    var mainArray: [Coin] = []
-    var searchResultArray: [Coin] = []
-    var coinsArray: [Coin] = []
-    
-
-    
+    var mainArray: [Coin] = []          // Response incoming
+    var searchResultArray: [Coin] = []  // Search result temporary
+    var coinsArray: [Coin] = []         // Show user array
     
     func getCurrencies(completion: @escaping ([Coin]) -> Void ) {
         

@@ -12,7 +12,6 @@ class DetailViewController: UIViewController {
     
     var article: Coin?
     
-    
     @IBOutlet weak var viewBackgroundImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var symbolLabel: UILabel!
@@ -51,7 +50,6 @@ class DetailViewController: UIViewController {
                 let roundedResult = (result ).rounded() / 100
                 volumeLabel.text = String(roundedResult)
             }
-            
             let url = URL(string: article.iconURL ?? "")
             SDImageCodersManager.shared.addCoder(SDImageSVGCoder.shared)
             cryptoImageView.sd_setImage(with: url, completed: nil)

@@ -9,36 +9,32 @@ import UIKit
 
 
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController {
     
+    // MARK: - Variables
     var viewModel : CoinViewModel!
     
-    
+    // MARK: - Menu View
     let menuView = UIView(frame: CGRect(x: 260, y: 100, width: 140, height: 150))
     let priceButton = UIButton(frame: CGRect(x: 20, y: 50, width: 100, height: 20))
     let marketCapButton = UIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 20))
     let changeButton = UIButton(frame: CGRect(x: 20, y: 80, width: 100, height: 20))
     let the24hVolume = UIButton(frame: CGRect(x: 20, y: 110, width: 100, height: 20))
     
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rankingList: UINavigationItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var sortButton: UIButton!
     
     
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         menuView.layer.cornerRadius = 20
         menuView.layer.masksToBounds = true
         view.addSubview(menuView)
-        //         MARK: HamburgerMenu
+        // MARK: HamburgerMenu
         menuView.backgroundColor = UIColor(red: 119/255, green: 104/255, blue: 180/255, alpha: 1)
         menuView.isHidden = true
         priceButton.backgroundColor = .clear
@@ -75,7 +71,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
+    // MARK: - Sort Menu Funcs.
     @objc func sortByVolume() {
         guard let viewModel = self.viewModel else {return}
         viewModel.coinsArray.sort{ (coinOne, coinTwo) -> Bool in
@@ -134,8 +130,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             menuView.isHidden = true
         }
     }
+    
+}
+// MARK: - Extensions
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -149,7 +150,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let chosenProduct = viewModel?.coinsArray[indexPath.section] {
             let vc = storyboard!.instantiateViewController(withIdentifier: "CryptoDetailViewController") as! DetailViewController
@@ -176,7 +176,6 @@ extension MainViewController: UISearchBarDelegate {
         viewModel.coinsArray = viewModel.mainArray
         tableView.reloadData()
     }
-    
 }
 
 

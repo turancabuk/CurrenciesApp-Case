@@ -14,7 +14,6 @@ enum currenciesAPICall: String {
     }
     
     case getCurrencies
-    
     private var urlString: String {
         
         switch self {
@@ -22,7 +21,6 @@ enum currenciesAPICall: String {
             return "\(baseUrl)"
         }
     }
-    
     var url: URL {
         switch self {
         case.getCurrencies:
