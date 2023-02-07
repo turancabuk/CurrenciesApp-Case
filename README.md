@@ -6,6 +6,7 @@
 ## Technology
 
 -  MVVM Desing Pattern
+-  Clean 
 -  Generic Network Layer
 -  Data sorting
 -  Dropdown Menu
@@ -13,8 +14,11 @@
 -  Extensions
 
 
-<img width="355" alt="Ekran Resmi 2023-02-07 20 30 42" src="https://user-images.githubusercontent.com/98350672/217329571-953ae784-aa06-482f-a270-583ca34645a0.png">     <img width="353" alt="Ekran Resmi 2023-02-07 20 33 13" src="https://user-images.githubusercontent.com/98350672/217329787-808a70af-2f57-40ea-859a-b780e3057cd2.png">
-
-<img width="351" alt="Ekran Resmi 2023-02-07 20 33 38" src="https://user-images.githubusercontent.com/98350672/217329873-a02706c0-2ad2-4a0d-ade8-b80cfdb93225.png">     <img width="352" alt="Ekran Resmi 2023-02-07 20 34 04" src="https://user-images.githubusercontent.com/98350672/217329904-cd838011-ea82-4344-85ad-90b6845e841a.png"> <img width="354" alt="Ekran Resmi 2023-02-07 20 34 32" src="https://user-images.githubusercontent.com/98350672/217329948-ff1f7c4a-d9ae-4903-ab6c-07ed55d22a85.png">
 
 
+
+<img width="355" alt="Ekran Resmi 2023-02-07 20 30 42" src="https://user-images.githubusercontent.com/98350672/217366176-75022eef-00de-467c-8e4f-96f2d442aebd.png"> <img width="353" alt="Ekran Resmi 2023-02-07 20 33 13" src="https://user-images.githubusercontent.com/98350672/217366226-72373113-9a9b-448b-906d-abd3f960c3b2.png">
+
+<img width="351" alt="Ekran Resmi 2023-02-07 20 33 38" src="https://user-images.githubusercontent.com/98350672/217366300-399346cd-3255-47d3-95a2-1458b8178f0a.png"> <img width="352" alt="Ekran Resmi 2023-02-07 20 34 04" src="https://user-images.githubusercontent.com/98350672/217366328-96b2762d-7ef7-47de-912c-dc14aeecf238.png">
+
+<img width="354" alt="Ekran Resmi 2023-02-07 20 34 32" src="https://user-images.githubusercontent.com/98350672/217366363-c48b6953-41a1-42cd-be14-2d399087b205.png">
