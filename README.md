@@ -1,18 +1,17 @@
 # CryptoCase
 ### Hi there, I'm Turan 
 
-- In this application, it was aimed to organize the data coming from JSON, create a separate menu display on the main screen and show it to the user by applying filters such as "price", "change" and also to make the user search by name with the "SearchBar" and to make the user access the data more easily. A cleaner code writing phase was provided by using MVVM structure.
+- In this application, listing the data from JSON on the main screen, going to the detail screen of the selected crypto asset, showing many details of this asset on the detail screen, reaching the desired crypto asset by searching on the main screen, "price", "change", "Market Cap", "24H Volume" sorting process is provided. This application is created with clean code in MVVM architecture.
 
 ## Technology
 
 -  MVVM Desing Pattern
--  SDWebImage SPM
--  JSON
 -  Generic Network Layer
+-  Data sorting
+-  Dropdown Menu
+-  Splash Screen Controller
 -  Extensions
 -  Data Sorting
-
-
 
 
 <img width="355" alt="Ekran Resmi 2023-02-07 20 30 42" src="https://user-images.githubusercontent.com/98350672/217329571-953ae784-aa06-482f-a270-583ca34645a0.png"><img width="353" alt="Ekran Resmi 2023-02-07 20 33 13" src="https://user-images.githubusercontent.com/98350672/217329787-808a70af-2f57-40ea-859a-b780e3057cd2.png">
