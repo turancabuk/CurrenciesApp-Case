@@ -6,7 +6,7 @@
 ## Technology
 
 -  MVVM Desing Pattern
--  Clean 
+-  Clean Code
 -  Generic Network Layer
 -  Data sorting
 -  Dropdown Menu
