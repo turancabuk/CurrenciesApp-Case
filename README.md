@@ -1,4 +1,4 @@
-# CryptoCase
+# CurrenciesApp
 ### Hi there, I'm Turan 
 
 - In this application, listing the data from JSON on the main screen, going to the detail screen of the selected crypto asset, showing many details of this asset on the detail screen, reaching the desired crypto asset by searching on the main screen, "price", "change", "Market Cap", "24H Volume" sorting process is provided. This application is created with clean code in MVVM architecture.
@@ -11,7 +11,6 @@
 -  Dropdown Menu
 -  Splash Screen Controller
 -  Extensions
--  Data Sorting
 
 
 <img width="355" alt="Ekran Resmi 2023-02-07 20 30 42" src="https://user-images.githubusercontent.com/98350672/217329571-953ae784-aa06-482f-a270-583ca34645a0.png">     <img width="353" alt="Ekran Resmi 2023-02-07 20 33 13" src="https://user-images.githubusercontent.com/98350672/217329787-808a70af-2f57-40ea-859a-b780e3057cd2.png">
